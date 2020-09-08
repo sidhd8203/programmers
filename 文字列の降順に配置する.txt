@@ -1,0 +1,27 @@
+問題の説明
+文字列 s に現れる文字を大きいものから小さい順に並べて新しい文字列をリターンする関数、solution を完成させてください。
+s は、大文字と小文字だけで構成されており、大文字は小文字より小さいものと見なします。
+
+制限事項
+str は、長さ 1 以上の文字列です。
+入出力例
+s	return
+Zbcdefg	gfedcbZ
+
+-----------------------------------------------------------------------------------------------------------------------
+
+public class Solution {
+    public string solution(string s) {
+        string answer = "";
+        
+        char[] a = s.ToCharArray();
+        
+        
+        System.Array.Sort(a);
+        System.Array.Reverse(a);
+        
+        answer = new string(a);
+        
+        return answer;
+    }
+}

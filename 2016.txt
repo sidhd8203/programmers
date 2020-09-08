@@ -1,0 +1,58 @@
+–â‘è‚Ìà–¾
+2016”N1ŒŽ1“ú‚Í‹à—j“ú‚Å‚·B 2016”N aŒŽ b“ú‚Í‰½—j“ú‚Å‚µ‚å‚¤‚©? 2‚Â‚Ì”‚Ìa,b‚ð“ü—Í‚µ‚Ä2016”NaŒŽb“ú‚ª‰½—j“ú‚È‚Ì‚©ƒŠƒ^[ƒ“‚·‚éŠÖ”Asolution‚ðŠ®¬‚³‚¹‚Ä‚­‚¾‚³‚¢B —j“ú‚Ì–¼‘O‚Í“ú—j“ú‚©‚ç“y—j“ú‚Ü‚Å‚»‚ê‚¼‚êSUN,MON,TUE,WED,THU,FRI,SAT
+
+‚Å‚·B‚½‚Æ‚¦‚ÎAa=5Ab=24‚È‚ç5ŒŽ24“ú‚Í‰Î—j“ú‚È‚Ì‚Å•¶Žš—ñTUE‚ð•Ô‚µ‚Ü‚·B
+
+§ŒÀðŒ
+2016”N‚Í‰[”N‚Å‚·B
+2016”NaŒŽb“ú‚ÍŽÀÛ‚É‚ ‚é“ú‚Å‚·B 13ŒŽ26“ú‚©2ŒŽ45“ú‚Ì‚æ‚¤‚È“ú•t‚Í—^‚¦‚ç‚ê‚Ü‚¹‚ñB
+“üo—Í—á
+a	b	result
+5	24	TUE
+
+------------------------------------------------------------------------------------------------------------------------
+public class Solution {
+    public string solution(int a, int b) {
+    string answer = "";
+         // 366
+    int month = a;
+    int day = b;
+    
+    // 31 29 31 30 31 30 31 31 30 31 30 31
+    int total = 0;
+    int[] d= {31,29,31,30,31,30,31,31,30,31,30,31};
+
+        
+    if(a==1){
+        total = day;// a = 1 b = 1 total = 1   
+    }else if(a>1){  // 5 24 
+        for(int i = 0; i<a-1; i++){ 
+            total = total+d[i];
+        }
+        total = total + day; // 31 29 31 30 + day 
+    }
+        
+    total = (total%7); // 31 + 5 = 36%7 1
+    // 31 % 7  3
+    if(total == 1){
+        answer = "FRI";
+    }else if(total == 2){
+         answer = "SAT";
+    }else if(total == 3){
+         answer = "SUN";
+    }else if(total == 4){
+         answer = "MON";
+    }else if(total == 5){
+         answer = "TUE";
+    }else if(total == 6){
+         answer = "WED";
+    }else //if(total == 7)
+    {
+         answer = "THU";
+    }       
+              return answer;
+    }
+    
+  
+    }
+

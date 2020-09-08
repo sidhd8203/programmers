@@ -1,0 +1,26 @@
+問題の説明
+単語sの真ん中の文字を返す関数、solutionを作ってみてください。 単語の長さが偶数なら、中央2文字を返せばいいです。
+
+在韓事項
+sは長さが1以上100以下のストリングです。
+入出力例
+
+s	return
+abcde	c
+qwer	we
+
+-----------------------------------------------------------------------------------------------------------------------
+
+public class Solution {
+    public string solution(string s) {
+        string answer = "";
+        // qwer  
+        if(s.Length%2==1){
+            answer = s[s.Length/2].ToString();
+        }else{
+            answer = s[(s.Length/2)-1].ToString() + s[s.Length/2].ToString();
+        }
+        
+        return answer;
+    }
+}
